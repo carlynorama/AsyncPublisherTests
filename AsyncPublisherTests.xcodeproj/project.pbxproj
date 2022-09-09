@@ -16,6 +16,7 @@
 		DAD1821028CBAE5900C9A809 /* AsyncPublisherTestsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD1820F28CBAE5900C9A809 /* AsyncPublisherTestsUITestsLaunchTests.swift */; };
 		DAD1821F28CBB18D00C9A809 /* NoAsyncPopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD1821E28CBB18D00C9A809 /* NoAsyncPopOver.swift */; };
 		DAD1822328CBB39D00C9A809 /* AsyncPopovers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD1822228CBB39D00C9A809 /* AsyncPopovers.swift */; };
+		DAD1822528CBCFDD00C9A809 /* IceCreamStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD1822428CBCFDD00C9A809 /* IceCreamStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		DAD1820F28CBAE5900C9A809 /* AsyncPublisherTestsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncPublisherTestsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DAD1821E28CBB18D00C9A809 /* NoAsyncPopOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoAsyncPopOver.swift; sourceTree = "<group>"; };
 		DAD1822228CBB39D00C9A809 /* AsyncPopovers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncPopovers.swift; sourceTree = "<group>"; };
+		DAD1822428CBCFDD00C9A809 /* IceCreamStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IceCreamStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				DAD181F128CBAE5700C9A809 /* AsyncPublisherTestsApp.swift */,
 				DAD181F328CBAE5700C9A809 /* ContentView.swift */,
 				DAD1821E28CBB18D00C9A809 /* NoAsyncPopOver.swift */,
+				DAD1822428CBCFDD00C9A809 /* IceCreamStore.swift */,
 				DAD1822228CBB39D00C9A809 /* AsyncPopovers.swift */,
 				DAD181F528CBAE5800C9A809 /* Assets.xcassets */,
 				DAD181F728CBAE5800C9A809 /* AsyncPublisherTests.entitlements */,
@@ -267,6 +270,7 @@
 			files = (
 				DAD1821F28CBB18D00C9A809 /* NoAsyncPopOver.swift in Sources */,
 				DAD181F428CBAE5700C9A809 /* ContentView.swift in Sources */,
+				DAD1822528CBCFDD00C9A809 /* IceCreamStore.swift in Sources */,
 				DAD1822328CBB39D00C9A809 /* AsyncPopovers.swift in Sources */,
 				DAD181F228CBAE5700C9A809 /* AsyncPublisherTestsApp.swift in Sources */,
 			);
