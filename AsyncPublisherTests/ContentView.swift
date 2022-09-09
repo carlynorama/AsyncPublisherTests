@@ -29,15 +29,15 @@ struct ContentView: View {
             //AsyncPopoverSetupFuncView()
             //NO!!!
             
-            //4)Does it say hello goodbye when [weak self] is put into the task?
+            //4) Does it say hello goodbye when [weak self] is put into the task?
             //AsyncPopoverWeakSetupFuncView()
             //Also no!
             
-            //4)What if you do a cancel check inside increment?
+            //4) What if you do a cancel check inside increment?
             //AsyncPopoverCancelCheckedSetupFuncView()
             //Still no.
             
-            //5)How about a tearDown function? (No cancel check, no weak self.)
+            //5) How about a tearDown function? (No cancel check, no weak self.)
             AsyncPopoverTaskKillerView()
             //YES!!!!!
         }

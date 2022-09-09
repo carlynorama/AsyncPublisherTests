@@ -21,7 +21,7 @@ class asyncViewModel:ObservableObject {
     private var counterTask: Task<(), Never>?
     
     public func increment() async {
-        while counter < 100 {
+        while counter < 8 {
            
             await MainActor.run {
                 counter += 1
@@ -31,7 +31,7 @@ class asyncViewModel:ObservableObject {
     }
     
     public func cancelCeckedIncrement() async {
-        while counter < 10 {
+        while counter < 8 {
             
             await MainActor.run {
                 counter += 1
