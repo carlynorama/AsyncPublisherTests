@@ -67,9 +67,7 @@ class asyncViewModel:ObservableObject {
     
     public func instanceTaskSetUp() {
         counterTask = Task {
-            [weak self] in
-            //does not need to be cancel checked.
-                await self?.increment()
+           await increment()
         }
     }
     

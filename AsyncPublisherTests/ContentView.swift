@@ -37,7 +37,7 @@ struct ContentView: View {
             //AsyncPopoverCancelCheckedSetupFuncView()
             //Still no.
             
-            //5)How about a tearDown function?
+            //5)How about a tearDown function? (No cancel check, no weak self.)
             AsyncPopoverModelKillerFuncView()
             //YES!!!!!
         }
