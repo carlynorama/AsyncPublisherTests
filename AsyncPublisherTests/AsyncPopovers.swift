@@ -48,10 +48,6 @@ class asyncViewModel:ObservableObject {
         }
     }
     
-    public func tearDown() {
-        counterTask?.cancel()
-    }
-    
     public func weakSetUp()  {
         Task { [weak self] in
             await self?.increment()
@@ -65,20 +61,24 @@ class asyncViewModel:ObservableObject {
         }
     }
     
+    
+    
     public func instanceTaskSetUp() {
         counterTask = Task {
            await increment()
         }
     }
     
+    public func tearDown() {
+        counterTask?.cancel()
+    }
+    
 
 }
 
-struct AsyncPopoverModelKillerFuncView: View {
+struct AsyncPopoverTaskKillerView: View {
     @StateObject var viewModel = asyncViewModel()
-    
- 
-    
+
     var body: some View {
         VStack {
             Text("\(viewModel.counter)")
