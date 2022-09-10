@@ -47,7 +47,10 @@ class InsistantFlavorVM:ObservableObject {
     @MainActor @Published var flavorsToDisplay: [Flavor] = []
     @MainActor @Published var thisWeeksSpecial:String = ""
 
-    //I believe this will keep this instance alive?
+    //I believe the awaiting on its @Published will keep this
+    //instance alive? And then therefore the calling IFVM alive.
+    //Tasks run in background, YAY! But is this a memory leak?
+    //What if I DON'T want it to run on the background.
     // can this be weak? it needs to also have a task killer?
     let manager = FlavorManager()
     
@@ -78,15 +81,18 @@ class InsistantFlavorVM:ObservableObject {
         //They appear to run even when App is in the background.
         
         //Note: Assigning a task to a variable does not "save it for later"
-        //this task starts running now. 
+        //this task starts running now.
         let dataLoading = Task { await manager.slowAddData() }
         
+        //Not sure weak self actually does anything here.
         Task { [weak self] in
             //This DOES NOT run its defer on view dismiss.
             await self?.listenForFlavorList()
             //No code here will execute because this function never
             //finishes.
         }
+        
+        
     }
     
     public func listenForFlavorOfTheWeek() async {
