@@ -16,7 +16,6 @@
 		DAD1821028CBAE5900C9A809 /* AsyncPublisherTestsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD1820F28CBAE5900C9A809 /* AsyncPublisherTestsUITestsLaunchTests.swift */; };
 		DAD1821F28CBB18D00C9A809 /* NoAsyncPopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD1821E28CBB18D00C9A809 /* NoAsyncPopOver.swift */; };
 		DAD1822328CBB39D00C9A809 /* AsyncPopovers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD1822228CBB39D00C9A809 /* AsyncPopovers.swift */; };
-		DAD1822528CBCFDD00C9A809 /* IceCreamStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD1822428CBCFDD00C9A809 /* IceCreamStore.swift */; };
 		DAD1822728CC02B600C9A809 /* CasualFlavorPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD1822628CC02B600C9A809 /* CasualFlavorPopover.swift */; };
 		DAD1822928CC036100C9A809 /* FlavorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD1822828CC036100C9A809 /* FlavorManager.swift */; };
 		DAD1822B28CC048F00C9A809 /* InsistantPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD1822A28CC048F00C9A809 /* InsistantPopover.swift */; };
@@ -53,7 +52,6 @@
 		DAD1820F28CBAE5900C9A809 /* AsyncPublisherTestsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncPublisherTestsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DAD1821E28CBB18D00C9A809 /* NoAsyncPopOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoAsyncPopOver.swift; sourceTree = "<group>"; };
 		DAD1822228CBB39D00C9A809 /* AsyncPopovers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncPopovers.swift; sourceTree = "<group>"; };
-		DAD1822428CBCFDD00C9A809 /* IceCreamStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IceCreamStore.swift; sourceTree = "<group>"; };
 		DAD1822628CC02B600C9A809 /* CasualFlavorPopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasualFlavorPopover.swift; sourceTree = "<group>"; };
 		DAD1822828CC036100C9A809 /* FlavorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlavorManager.swift; sourceTree = "<group>"; };
 		DAD1822A28CC048F00C9A809 /* InsistantPopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsistantPopover.swift; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 				DAD1822628CC02B600C9A809 /* CasualFlavorPopover.swift */,
 				DAD1822828CC036100C9A809 /* FlavorManager.swift */,
 				DAD1821E28CBB18D00C9A809 /* NoAsyncPopOver.swift */,
-				DAD1822428CBCFDD00C9A809 /* IceCreamStore.swift */,
 				DAD1822A28CC048F00C9A809 /* InsistantPopover.swift */,
 				DAD1822228CBB39D00C9A809 /* AsyncPopovers.swift */,
 				DAD181F528CBAE5800C9A809 /* Assets.xcassets */,
@@ -282,7 +279,6 @@
 				DAD1822928CC036100C9A809 /* FlavorManager.swift in Sources */,
 				DAD1822728CC02B600C9A809 /* CasualFlavorPopover.swift in Sources */,
 				DAD181F428CBAE5700C9A809 /* ContentView.swift in Sources */,
-				DAD1822528CBCFDD00C9A809 /* IceCreamStore.swift in Sources */,
 				DAD1822328CBB39D00C9A809 /* AsyncPopovers.swift in Sources */,
 				DAD181F228CBAE5700C9A809 /* AsyncPublisherTestsApp.swift in Sources */,
 			);
