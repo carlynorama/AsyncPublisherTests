@@ -52,7 +52,7 @@ struct ContentView: View {
                 
             }
             //7) Shouls pop back up with every new flavor.
-            Button("Drive Background Alerts Me") {
+            Button("Drive Background Alerts") {
                 insistant.acceptingAlerts = true
                 insistant.showMe = true
             }

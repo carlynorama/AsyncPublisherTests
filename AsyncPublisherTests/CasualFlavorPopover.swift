@@ -21,21 +21,32 @@ struct CasualFlavorsView: View {
                 }
             }
         }
+        
+        //This is actually the way. if the view model
+        //should evaporate with the view. Put the Tasks
+        //in the view and in the view only.
+        
         //Each must be its own seperate task to run concurently.
         .task {
             await viewModel.start()
         }
-        
+
         .task {
-            //should be cleaned up and not leak.
             await viewModel.listenForFlavorOfTheWeek()
         }
+        
+        //If the tasks are going to live in the view model,
+        //they must be torn down if they are meant
+        //to go away with the view.
+        //If they are meant to go to completion, it doesn't matter.
         .onDisappear(perform: viewModel.tearDown)
     }
     
 
 }
 
+
+//Listener architecture to p
 class CasualFlavorVM:ObservableObject {
     @MainActor @Published var flavorsToDisplay: [Flavor] = []
     @MainActor @Published var thisWeeksSpecial:String = ""

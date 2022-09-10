@@ -39,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DAA7413228CCDB4E00D1A1F6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DAD181EE28CBAE5700C9A809 /* AsyncPublisherTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AsyncPublisherTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAD181F128CBAE5700C9A809 /* AsyncPublisherTestsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncPublisherTestsApp.swift; sourceTree = "<group>"; };
 		DAD181F328CBAE5700C9A809 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +86,7 @@
 		DAD181E528CBAE5700C9A809 = {
 			isa = PBXGroup;
 			children = (
+				DAA7413228CCDB4E00D1A1F6 /* README.md */,
 				DAD181F028CBAE5700C9A809 /* AsyncPublisherTests */,
 				DAD1820228CBAE5900C9A809 /* AsyncPublisherTestsTests */,
 				DAD1820C28CBAE5900C9A809 /* AsyncPublisherTestsUITests */,
