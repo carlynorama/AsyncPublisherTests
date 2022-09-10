@@ -20,7 +20,7 @@ class AsyncViewModel:ObservableObject {
     
     
     
-    //-------- STEP 3, 4, 6 ----------
+    //----- STEPS 3, 4, 6 -------
     public func increment() async {
         while counter < 8 {
            

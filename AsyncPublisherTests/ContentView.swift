@@ -7,12 +7,31 @@
 
 import SwiftUI
 
+//struct ContentWrapper:View {
+//    @State var viewShower = false
+//    var body: some View {
+//
+//        Button("ToggleView") {
+//            viewShower.toggle()
+//        }
+//
+//
+//        if viewShower {
+//            ContentView()
+//        }
+//
+//    }
+//}
+
 struct ContentView: View {
     @State private var showingPopover = false
 
+    //This VM must instiated at the ROOT level of the app, once
+    //and ONLY once or you'll continue to spawn tasks.
     @StateObject private var insistant = InsistantFlavorVM()
-    
-    
+    //Doing it as a root defined object would be better.
+    //@EnvironmentObject var insistant:InsistantFlavorVM
+
     var body: some View {
         VStack {
             Button("Show & Update While Looking") {
@@ -65,6 +84,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(InsistantFlavorVM())
     }
 }

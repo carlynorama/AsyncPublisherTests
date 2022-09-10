@@ -13,3 +13,4 @@ See: https://gist.github.com/carlynorama/7532f59283bf1bddabe9932842752896
 - https://www.hackingwithswift.com/articles/179/capture-lists-in-swift-whats-the-difference-between-weak-strong-and-unowned-references
 - https://www.mikeash.com/pyblog/friday-qa-2017-09-22-swift-4-weak-references.html
 - https://forums.swift.org/t/explicit-self-not-required-for-task-closures/54364/7
+- https://blog.logrocket.com/complete-guide-swift-defer-statement/

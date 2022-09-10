@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct AsyncPublisherTestsApp: App {
+
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(insistant)
         }
     }
 }
