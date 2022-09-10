@@ -13,7 +13,7 @@ struct AsyncPublisherTestsApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(insistant)
+            ContentView()//.environmentObject(insistant)
         }
     }
 }

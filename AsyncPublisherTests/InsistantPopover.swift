@@ -75,8 +75,12 @@ class InsistantFlavorVM:ObservableObject {
         //One cannot put one loop after another. Each loop needs
         //it's own task.
         //Use this pattern if you want the task to have to complete.
-        //They appear to run even when App is in the background. 
-        Task { await manager.slowAddData() }
+        //They appear to run even when App is in the background.
+        
+        //Note: Assigning a task to a variable does not "save it for later"
+        //this task starts running now. 
+        let dataLoading = Task { await manager.slowAddData() }
+        
         Task { [weak self] in
             //This DOES NOT run its defer on view dismiss.
             await self?.listenForFlavorList()
