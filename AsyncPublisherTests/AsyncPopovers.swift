@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class asyncViewModel:ObservableObject {
+class AsyncViewModel:ObservableObject {
     @Published var counter:Int = 0
     
     init() {
@@ -18,8 +18,9 @@ class asyncViewModel:ObservableObject {
         print("goodbye")
     }
     
-    private var counterTask: Task<(), Never>?
     
+    
+    //-------- STEP 3, 4, 6 ----------
     public func increment() async {
         while counter < 8 {
            
@@ -27,6 +28,27 @@ class asyncViewModel:ObservableObject {
                 counter += 1
             }
             try? await  Task.sleep(nanoseconds: 2_000_000_000)
+        }
+    }
+    
+    //-------- STEP 3 ----------
+    public func setUp()  {
+        Task {
+            await increment()
+        }
+    }
+    
+    //-------- STEP 4 ----------
+    public func weakSetUp()  {
+        Task { [weak self] in
+            await self?.increment()
+        }
+    }
+    
+    //-------- STEP 5 ----------
+    public func cancelCheckedWeakSetUp()  {
+        Task { [weak self] in
+            await self?.cancelCeckedIncrement()
         }
     }
     
@@ -41,27 +63,8 @@ class asyncViewModel:ObservableObject {
         }
     }
     
-    
-    public func setUp()  {
-        Task {
-            await increment()
-        }
-    }
-    
-    public func weakSetUp()  {
-        Task { [weak self] in
-            await self?.increment()
-        }
-    }
-    
-    
-    public func cancelCheckedWeakSetUp()  {
-        Task { [weak self] in
-            await self?.cancelCeckedIncrement()
-        }
-    }
-    
-    
+    //-------- STEP 6 ----------
+    private var counterTask: Task<(), Never>?
     
     public func instanceTaskSetUp() {
         counterTask = Task {
@@ -76,53 +79,10 @@ class asyncViewModel:ObservableObject {
 
 }
 
-struct AsyncPopoverTaskKillerView: View {
-    @StateObject var viewModel = asyncViewModel()
 
-    var body: some View {
-        VStack {
-            Text("\(viewModel.counter)")
-            //Stepper("counter", value: $viewModel.counter)
-        }.onDisappear(perform: viewModel.tearDown)
-        .onAppear(perform: viewModel.instanceTaskSetUp)
-    }
-}
-
-struct AsyncPopoverCancelCheckedSetupFuncView: View {
-    @StateObject var viewModel = asyncViewModel()
-    
-    var body: some View {
-        VStack {
-            Text("\(viewModel.counter)")
-            //Stepper("counter", value: $viewModel.counter)
-        }.onAppear(perform: viewModel.cancelCheckedWeakSetUp)
-    }
-}
-
-struct AsyncPopoverWeakSetupFuncView: View {
-    @StateObject var viewModel = asyncViewModel()
-    
-    var body: some View {
-        VStack {
-            Text("\(viewModel.counter)")
-            //Stepper("counter", value: $viewModel.counter)
-        }.onAppear(perform: viewModel.weakSetUp)
-    }
-}
-
-struct AsyncPopoverSetupFuncView: View {
-    @StateObject var viewModel = asyncViewModel()
-    
-    var body: some View {
-        VStack {
-            Text("\(viewModel.counter)")
-            //Stepper("counter", value: $viewModel.counter)
-        }.onAppear(perform: viewModel.setUp)
-    }
-}
-
+//MARK: Step 2 View
 struct SimplestAsyncPopoverView: View {
-    @StateObject var viewModel = asyncViewModel()
+    @StateObject var viewModel = AsyncViewModel()
     
     var body: some View {
         VStack {
@@ -134,8 +94,51 @@ struct SimplestAsyncPopoverView: View {
     }
 }
 
-struct SimplestAsyncPopoverView_Previews: PreviewProvider {
-    static var previews: some View {
-        SimplestAsyncPopoverView()
+//MARK: Step 3 View
+struct AsyncPopoverSetupFuncView: View {
+    @StateObject var viewModel = AsyncViewModel()
+    
+    var body: some View {
+        VStack {
+            Text("\(viewModel.counter)")
+            //Stepper("counter", value: $viewModel.counter)
+        }.onAppear(perform: viewModel.setUp)
+    }
+}
+
+//MARK: Step 4 View
+struct AsyncPopoverWeakSetupFuncView: View {
+    @StateObject var viewModel = AsyncViewModel()
+    
+    var body: some View {
+        VStack {
+            Text("\(viewModel.counter)")
+            //Stepper("counter", value: $viewModel.counter)
+        }.onAppear(perform: viewModel.weakSetUp)
+    }
+}
+
+//MARK: Step 5 View
+struct AsyncPopoverCancelCheckedSetupFuncView: View {
+    @StateObject var viewModel = AsyncViewModel()
+    
+    var body: some View {
+        VStack {
+            Text("\(viewModel.counter)")
+            //Stepper("counter", value: $viewModel.counter)
+        }.onAppear(perform: viewModel.cancelCheckedWeakSetUp)
+    }
+}
+
+//MARK: Step 6 View
+struct AsyncPopoverTaskKillerView: View {
+    @StateObject var viewModel = AsyncViewModel()
+
+    var body: some View {
+        VStack {
+            Text("\(viewModel.counter)")
+            //Stepper("counter", value: $viewModel.counter)
+        }.onDisappear(perform: viewModel.tearDown)
+        .onAppear(perform: viewModel.instanceTaskSetUp)
     }
 }
