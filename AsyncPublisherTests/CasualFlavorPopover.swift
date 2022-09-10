@@ -29,8 +29,7 @@ struct CasualFlavorsView: View {
         //Each must be its own seperate task to run concurently.
         .task {
             await viewModel.start()
-        }
-
+        }        
         .task {
             await viewModel.listenForFlavorOfTheWeek()
         }
@@ -42,6 +41,17 @@ struct CasualFlavorsView: View {
         .onDisappear(perform: viewModel.tearDown)
     }
     
+    // NOTE  The below pattern IS NOT THE SAME. It does not allow
+    // the task persists after view dismissal.*/
+    //
+    //    VStack{...}.onAppear(perform:test)
+    //
+    //    func test() {
+    //        Task {
+    //            await viewModel.listenForFlavorOfTheWeek()
+    //        }
+    //    }
+     
 
 }
 
