@@ -15,7 +15,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Button("Show Flavors") {
+            Button("Show & Update While Looking") {
                 showingPopover = true
             }
             .popover(isPresented: $showingPopover) {
@@ -42,17 +42,17 @@ struct ContentView: View {
                 //Still no.
                 
                 //5) How about a tearDown function? (No cancel check, no weak self.)
-                AsyncPopoverTaskKillerView()
+                //AsyncPopoverTaskKillerView()
                 //YES!!!!!
                 
                 //6) The two objects example, deiniting on dismiss
-                //CasualFlavorsView()
+                CasualFlavorsView()
                 
                 
                 
             }
             //7) Shouls pop back up with every new flavor.
-            Button("Alert Me") {
+            Button("Drive Background Alerts Me") {
                 insistant.acceptingAlerts = true
                 insistant.showMe = true
             }
