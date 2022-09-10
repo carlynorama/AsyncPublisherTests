@@ -50,30 +50,3 @@ actor FlavorManager {
     }
 }
 
-
-actor FlavorManager2 {
-    @Published var myFlavors:[Flavor] = []
-    @Published var currentFlavor:Flavor = Flavor(name: "Apple Pie", description: "Seasonal Yummy")
-    
-    init() {
-    }
-
-//    func addData() async {
-//
-//        for flavor in flavors {
-//            Timer.scheduledTimer(withTimeInterval: 4, repeats: false) {  _ in
-//                self.myFlavors.append(flavor)
-//                self.currentFlavor = flavor
-//            }
-//        }
-//    }
-
-    func addData() async {
-        
-        for flavor in flavors {
-            myFlavors.append(flavor)
-            try? await  Task.sleep(nanoseconds: 4_000_000_000)
-            currentFlavor = flavor
-        }
-    }
-}
