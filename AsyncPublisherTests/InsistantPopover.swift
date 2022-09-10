@@ -47,18 +47,24 @@ class InsistantFlavorVM:ObservableObject {
     @MainActor @Published var flavorsToDisplay: [Flavor] = []
     @MainActor @Published var thisWeeksSpecial:String = ""
 
-    let manager = FlavorManager2()
+    //I believe this will keep this instance alive?
+    // can this be weak? it needs to also have a task killer?
+    let manager = FlavorManager()
     
     @MainActor @Published var showMe:Bool = false
-    
     @MainActor @Published var acceptingAlerts = false
 
     init() {
+        print("background hello")
         //spinning up tasks in the init of a ViewModel instead of the
         //view means they will likely persist for longer than the view.
         //inside the listen function set the instance variable instead.
         
         listen()
+    }
+    
+    deinit {
+        print("never say goodbye...")
     }
 
 
@@ -67,7 +73,7 @@ class InsistantFlavorVM:ObservableObject {
         //One cannot put one loop after another. Each loop needs
         //it's own task.
         //Use this pattern if you want the task to have to complete.
-        Task { await manager.addData() }
+        Task { await manager.slowAddData() }
         Task { [weak self] in
             
             await self?.listenForFlavorList()
@@ -75,7 +81,7 @@ class InsistantFlavorVM:ObservableObject {
             //finishes.
         }
     }
-
+    
     public func listenForFlavorOfTheWeek() async {
         for await value in await manager.$currentFlavor.values {
             await MainActor.run { //[weak self] in
@@ -97,3 +103,5 @@ class InsistantFlavorVM:ObservableObject {
     
     
 }
+
+
