@@ -1,6 +1,6 @@
 #  AsyncPublisher Exploration.
 
-A project to explore AsyncApublisher, Tasks and thier life times.
+A project to explore AsyncApublisher, Tasks and their life times.
 
 See: https://gist.github.com/carlynorama/7532f59283bf1bddabe9932842752896
 
